@@ -18,7 +18,7 @@ const ProdutosProvider = ({ children }) => {
     const url = id ? `/produtos/${id}` : `/produtos`;
     try {
       const { data } = await axiosClient.get(url);
-      const _data = data?.data;
+      const _data = data
       console.log({ _data });
 
       if (!_data) throw new Error("Erro ao carregar produtos");
