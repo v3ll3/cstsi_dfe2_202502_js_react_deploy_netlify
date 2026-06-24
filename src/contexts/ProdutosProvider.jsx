@@ -36,13 +36,13 @@ const ProdutosProvider = ({ children }) => {
       formDataProduto['fornecedor_id'] = 1;
       console.log(`Cadastrar novo produto:`, formDataProduto);
 
-      // const { data } = await axiosClient.post(`/produtos/`, formDataProduto, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
+      const { data } = await axiosClient.post(`/produtos/`, formDataProduto, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
-       const { data } = await axiosClient.post(`/produtos/`, formDataProduto);
+      //  const { data } = await axiosClient.post(`/produtos/`, formDataProduto);
 
       if (!data) throw new Error("Erro ao atualizar produto");
       const _data = data?.data;
